@@ -1,0 +1,25 @@
+cat /proc/filesystems | grep overlay
+
+mkdir material 
+echo "bad concrete" > material/concrete
+echo "rebar" > material/rebar
+
+
+mkdir material2
+echo "good concrete" > material2/concrete
+echo "marble" > material2/marbel
+
+mkdir merge work build
+
+
+mount -t overlay overlay -olowerdir = material: material2,upperdir=build,workdir=work merage
+
+1.覆盖
+
+2.新增
+echo "main structure" > merge/frame
+
+3. 删除
+rm merge/marble
+
+
